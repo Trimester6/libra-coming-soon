@@ -1,26 +1,24 @@
-import { NewsletterForm } from "@/components/newsletter-form";
-import { Button } from "@/components/ui/button";
+import { Confetti } from "@/components/confetti";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Icons } from "@/components/ui/icons";
 import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Uskoro — Libra Delivery",
+  title: "Hvala — Libra Delivery",
   description:
     "Budite u toku sa našim velikim otkrićem! Prijavite se na naš newsletter da biste prvi saznali o našem lansiranju, ekskluzivnim ponudama i uzbudljivim novostima. Ne propustite ono što dolazi – pridružite nam se danas!",
 };
 
-export default function ComingSoon() {
+export default function ThankYou() {
   return (
     <div className="relative min-h-screen bg-rose-50 flex flex-col">
+      <Confetti />
       <div
         className="h-[60px] w-full"
         style={{
@@ -52,32 +50,20 @@ export default function ComingSoon() {
           height={200}
           className="h-40 w-auto"
         />
-        <Card className="w-full max-w-md">
-          <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl font-bold text-center">
-              Prijavi se za obaveštenja
-            </CardTitle>
-            <CardDescription className="text-center">
-              I budi prvi koji će saznati sve o novostima i promocijama
+
+        <Card className="w-full max-w-md text-center">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold">Hvala!</CardTitle>
+            <CardDescription>
+              Uspešno ste se prijavili za obaveštenja.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <NewsletterForm />
+            <p className="text-muted-foreground">
+              Uskoro ćete primiti email sa kuponom koji možete iskoristiti dva
+              puta za 250 dinara popusta na Vaše sledeće dve kupovine.
+            </p>
           </CardContent>
-          <CardFooter className="flex justify-center space-x-4">
-            {/* <Button variant="ghost" size="icon">
-              <Icons.facebook className="h-5 w-5 text-red" />
-              <span className="sr-only">Facebook</span>
-            </Button> */}
-            <Button variant="ghost" size="icon">
-              <Icons.instagram className="h-5 w-5 text-red" />
-              <span className="sr-only">Instagram</span>
-            </Button>
-            {/* <Button variant="ghost" size="icon">
-              <Icons.twitter className="h-5 w-5 text-red" />
-              <span className="sr-only">Twitter</span>
-            </Button> */}
-          </CardFooter>
         </Card>
       </div>
       <div
